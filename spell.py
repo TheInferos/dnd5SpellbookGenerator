@@ -1,5 +1,6 @@
-class Spell():
-    def __init__(self,data):
+class Spell:
+    def __init__(self, data):
         self.level = data["level"]
-    def getLevel(self):
+
+    def get_level(self):
         return self.level
