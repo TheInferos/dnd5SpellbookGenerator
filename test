@@ -1,0 +1,5 @@
+id,name,school,level,components,material,casting_time,ritual,concentration,sRange,classes,subclasses,duration,page,desc,higher_level
+"id":id,"name":name,"school":school,"level":level,"components":components,"material":material,"casting_time":casting_time,"ritual":ritual,"concentration":concentration,"sRange":sRange,"classes":classes,"subclasses":subclasses,"duration":duration,"page":page,"desc":desc,"higher_level":higher_level
+
+
+?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
