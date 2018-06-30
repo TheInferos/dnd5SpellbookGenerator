@@ -119,5 +119,4 @@ def pass_spells(database):
     database.commit()
 
 
-db = database_setup()
-pass_spells(db)
+

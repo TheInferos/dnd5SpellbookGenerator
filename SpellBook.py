@@ -1,41 +1,29 @@
-import spell
+import Spell
 
 
 class SpellBook:
     def __init__(self):
-        self.minS = []
-        self.maxS = []
-        self.spellList = [[], [], [], [], [], [], [], [], [], []]
+        self.spell_list = [[], [], [], [], [], [], [], [], [], []]
 
-    def create_spell_book_level_min_max(self, wiz_lvl):
-        min_s = [6, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        max_s = [6, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        for i in range(1, wiz_lvl):
-            lvl = i // 2
-            min_s[lvl] += 2
-            for j in range(lvl + 1):
-                max_s[j] += 2
-        self.minS = min_s
-        self.maxS = max_s[0:9]
 
-    def spell_added(self, spell_level):
-        pos = spell_level - 1
-        for i in range(pos):
-            self.maxS[i] -= 1
-        self.minS[pos] -= 1
 
     def add_spell(self, add_spell):
-        s_lvl = add_spell.get_level()
-        self.spell_added(s_lvl)
-        self.spellList[s_lvl].append(add_spell)
+        self.spell_list[add_spell.get_level()].append(add_spell)
+
+    def get_spell_names(self):
+        spell_names = [[], [], [], [], [], [], [], [], [], []]
+        for level in range(len(self.spell_list)):
+            for spell in range(len(self.spell_list[level])):
+                spell_names[level].append(self.spell_list[level][spell].name)
+        return spell_names
+
+
+
 
 
 def test():
     spell_book = SpellBook()
     spell_book.create_spell_book_level_min_max(20)
-    test_spell = spell.Spell({"level": 4})
+    test_spell = Spell.Spell({"level": 4})
     spell_book.add_spell(test_spell)
-    print spell_book.spellList
-
-
-test()
+    #print spell_book.spell_list
